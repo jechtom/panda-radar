@@ -9,41 +9,74 @@ class PandaRadar {
     }
 
     async init() {
-        await this.loadPandaData();
+        console.log('🚀 Spouštím inicializaci Panda Radar...');
         this.initMap();
+        await this.loadPandaData();
         this.bindEvents();
         // Inicializace seznamu zoo i bez geolokace
         this.updateZooList();
+        console.log('✅ Inicializace dokončena');
     }
 
     // Načtení dat o zoo s pandami z JSON souboru
     async loadPandaData() {
-        try {
-            const response = await fetch('data/pandas.json');
-            const data = await response.json();
-            
-            // Filtrace pouze aktivních zoo a přidání do pole
-            this.pandaZoos = data.zoos.filter(zoo => zoo.status === 'active');
-            
-            // Zobrazení metadat v konzoli
-            console.log(`🐼 Loaded ${data.metadata.totalZoos} zoos with ${data.metadata.totalPandas} pandas`);
-            console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
-            
-            // Přidání markerů na mapu až po načtení dat
-            if (this.map) {
-                this.addPandaMarkers();
+        console.log('📁 Načítám data z pandas.json...');
+        
+        // Zkusím různé cesty k JSON souboru
+        const possiblePaths = [
+            './data/pandas.json',
+            'data/pandas.json',
+            '/data/pandas.json'
+        ];
+        
+        for (const path of possiblePaths) {
+            try {
+                console.log(`🔍 Zkouším cestu: ${path}`);
+                const response = await fetch(path);
+                console.log('📡 Response status:', response.status, response.statusText);
+                
+                if (!response.ok) {
+                    console.log(`❌ Cesta ${path} nefunguje: ${response.status}`);
+                    continue;
+                }
+                
+                const data = await response.json();
+                console.log('📊 Načtená data:', data);
+                
+                // Filtrace pouze aktivních zoo a přidání do pole
+                this.pandaZoos = data.zoos.filter(zoo => zoo.status === 'active');
+                console.log(`🐼 Nalezeno ${this.pandaZoos.length} aktivních zoo s pandami`);
+                
+                // Zobrazení metadat v konzoli
+                console.log(`🐼 Loaded ${data.metadata.totalZoos} zoos with ${data.metadata.totalPandas} pandas`);
+                console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
+                
+                // Přidání markerů na mapu až po načtení dat
+                if (this.map && this.pandaZoos.length > 0) {
+                    console.log('🗺️ Mapa je připravena, přidávám markery...');
+                    this.addPandaMarkers();
+                } else {
+                    console.error('❌ Mapa není inicializovaná nebo žádná data');
+                }
+                
+                this.updateStats();
+                return; // Úspěšně načteno, ukončit
+                
+            } catch (error) {
+                console.log(`❌ Chyba s cestou ${path}:`, error);
+                continue;
             }
-            
-            this.updateStats();
-        } catch (error) {
-            console.error('❌ Chyba při načítání dat o pandách:', error);
-            // Fallback na základní data pokud se nepodaří načíst JSON
-            this.loadFallbackData();
         }
+        
+        // Žádná cesta nefungovala
+        console.error('❌ Žádná cesta k pandas.json nefunguje!');
+        console.log('🔄 Používám fallback data...');
+        this.loadFallbackData();
     }
 
     // Fallback data pokud se JSON nepodaří načíst
     loadFallbackData() {
+        console.log('🔄 Načítám fallback data...');
         this.pandaZoos = [
             {
                 name: "Zoo Berlin",
@@ -71,8 +104,11 @@ class PandaRadar {
             }
         ];
         
+        console.log(`🐼 Fallback: ${this.pandaZoos.length} zoo načteno`);
+        
         // Přidání markerů i pro fallback data
         if (this.map) {
+            console.log('🗺️ Přidávám fallback markery na mapu...');
             this.addPandaMarkers();
         }
         
@@ -390,7 +426,7 @@ class PandaRadar {
 
 // Inicializace aplikace po načtení stránky
 document.addEventListener('DOMContentLoaded', async () => {
-    window.pandaRadar = new PandaRadar();
+    console.log('📄 DOM načten, spouštím aplikaci...');
     
     // Zobrazení loading stavu
     const zooList = document.getElementById('zooList');
@@ -400,6 +436,27 @@ document.addEventListener('DOMContentLoaded', async () => {
             Načítám nejnovější data o pandách... 🌍
         </div>
     `;
+    
+    // Inicializace aplikace
+    window.pandaRadar = new PandaRadar();
+    
+    // Test markeru po 3 sekundách
+    setTimeout(() => {
+        console.log('🧪 TEST: Kontrola markerů po 3 sekundách...');
+        if (window.pandaRadar.markers.length > 0) {
+            console.log(`✅ Nalezeno ${window.pandaRadar.markers.length} markerů na mapě`);
+        } else {
+            console.log('❌ Žádné markery nenalezeny!');
+            console.log('🔍 Zkouším přidat testovací marker...');
+            
+            // Přidání testovacího markeru
+            if (window.pandaRadar.map) {
+                const testMarker = L.marker([50.0833, 14.4167]).addTo(window.pandaRadar.map);
+                testMarker.bindPopup('🧪 Testovací marker - Praha');
+                console.log('✅ Testovací marker přidán');
+            }
+        }
+    }, 3000);
 });
 
 // Přidání speciálních efektů pro extra roztomilost
