@@ -106,8 +106,8 @@ Tento projekt je příkladem **"vibe coding"** - programování s důrazem na:
 panda-radar/
 ├── index.html          # Hlavní HTML soubor
 ├── styles.css          # CSS styly
-├── script.js           # JavaScript logika
-├── README.md           # Dokumentace
+├── script.js           # JavaScript logika├── data/
+│   └── pandas.json     # Aktuální data o zoo s pandami (Wikipedia)├── README.md           # Dokumentace
 ├── LICENSE             # MIT licence
 ├── .github/
 │   └── workflows/
@@ -135,17 +135,24 @@ Rádi uvítáme příspěvky! Podívejte se na [CONTRIBUTING.md](docs/CONTRIBUTI
 
 ### Jak přidat novou zoo s pandami:
 
-1. Otevřete `script.js`
-2. Najděte pole `pandaZoos`
+1. Otevřete [`data/pandas.json`](data/pandas.json)
+2. Najděte pole `zoos` 
 3. Přidejte nový objekt s informacemi o zoo:
-   ```javascript
+   ```json
    {
-       name: "Název Zoo",
-       location: "Město, Země",
-       lat: 50.1234,    // GPS souřadnice
-       lng: 14.5678,
-       pandas: 2,       // Počet pand
-       details: "Zajímavé informace o pandách v této zoo! 🐼"
+     "id": "unique_zoo_id",
+     "name": "Název Zoo",
+     "location": "Město, Země",
+     "country": "Country",
+     "continent": "Europe/Asia/North America/Australia",
+     "lat": 50.1234,
+     "lng": 14.5678,
+     "pandas": 2,
+     "status": "active",
+     "details": "Zajímavé informace o pandách! 🐼",
+     "pandaNames": ["Jméno 1", "Jméno 2"],
+     "established": 2024,
+     "contract": "loan from China"
    }
    ```
 

@@ -8,94 +8,51 @@ class PandaRadar {
         this.init();
     }
 
-    init() {
-        this.loadPandaData();
+    async init() {
+        await this.loadPandaData();
         this.initMap();
         this.bindEvents();
     }
 
-    // Data o zoo s pandami (reálná data)
-    loadPandaData() {
+    // Načtení dat o zoo s pandami z JSON souboru
+    async loadPandaData() {
+        try {
+            const response = await fetch('data/pandas.json');
+            const data = await response.json();
+            
+            // Filtrace pouze aktivních zoo a přidání do pole
+            this.pandaZoos = data.zoos.filter(zoo => zoo.status === 'active');
+            
+            // Zobrazení metadat v konzoli
+            console.log(`🐼 Loaded ${data.metadata.totalZoos} zoos with ${data.metadata.totalPandas} pandas`);
+            console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
+            
+            this.updateStats();
+        } catch (error) {
+            console.error('❌ Chyba při načítání dat o pandách:', error);
+            // Fallback na základní data pokud se nepodaří načíst JSON
+            this.loadFallbackData();
+        }
+    }
+
+    // Fallback data pokud se JSON nepodaří načíst
+    loadFallbackData() {
         this.pandaZoos = [
             {
                 name: "Zoo Berlin",
                 location: "Berlín, Německo",
                 lat: 52.5085,
                 lng: 13.3376,
-                pandas: 2,
-                details: "Meng Meng a Jiao Qing - nejslavnější panda pár v Evropě! 🐼💕"
-            },
-            {
-                name: "Schönbrunn Zoo",
-                location: "Vídeň, Rakousko", 
-                lat: 48.1825,
-                lng: 16.3023,
-                pandas: 2,
-                details: "Yang Yang a Yuan Yuan žijí v krásném pavilonu s bambusovým hájem! 🎋"
-            },
-            {
-                name: "Zoo Praha",
-                location: "Praha, Česká republika",
-                lat: 50.1167,
-                lng: 14.4167,
-                pandas: 0,
-                details: "Bohužel momentálne žádné pandy, ale plánuje se jejich návrat! 🤞"
-            },
-            {
-                name: "Pairi Daiza",
-                location: "Brugelette, Belgie",
-                lat: 50.5833,
-                lng: 3.8667,
                 pandas: 4,
-                details: "Hao Hao, Xing Hui a jejich mláďata! Největší panda kolonie v Evropě! 🐼👨‍👩‍👧‍👦"
+                details: "Jiao Qing, Meng Meng a jejich dvojčata! 🐼👨‍👩‍👧‍👦"
             },
             {
-                name: "Zoo de Beauval",
+                name: "ZooParc de Beauval",
                 location: "Saint-Aignan, Francie",
                 lat: 47.2667,
                 lng: 1.3667,
-                pandas: 4,
-                details: "Huan Huan, Yuan Zi a jejich dvojčata! Jediná zoo ve Francii s pandami! 🇫🇷🐼"
-            },
-            {
-                name: "Edinburgh Zoo",
-                location: "Edinburgh, Skotsko",
-                lat: 55.9414,
-                lng: -3.2678,
-                pandas: 2,
-                details: "Tian Tian a Yang Guang obývají nádherný Land of the Living Legends! 🏴󠁧󠁢󠁳󠁣󠁴󠁿"
-            },
-            {
-                name: "Zoo Madrid",
-                location: "Madrid, Španělsko",
-                lat: 40.4086,
-                lng: -3.7573,
-                pandas: 3,
-                details: "Bing Xing, Hua Zui Ba a Po - španělská panda rodina! 🇪🇸"
-            },
-            {
-                name: "Moscow Zoo",
-                location: "Moskva, Rusko",
-                lat: 55.7614,
-                lng: 37.5753,
-                pandas: 3,
-                details: "Ru Yi, Ding Ding a jejich mládě žijí v moderním pavilonu! 🇷🇺"
-            },
-            {
-                name: "San Diego Zoo",
-                location: "San Diego, USA",
-                lat: 32.7353,
-                lng: -117.1490,
-                pandas: 4,
-                details: "Domov nejúspěšnějšího panda programu! Bai Yun legendy! 🇺🇸"
-            },
-            {
-                name: "National Zoo Washington",
-                location: "Washington D.C., USA", 
-                lat: 38.9286,
-                lng: -77.0498,
-                pandas: 3,
-                details: "Tian Tian, Mei Xiang a Xiao Qi Ji - americké panda hvězdy! ⭐"
+                pandas: 5,
+                details: "Huan Huan, Yuan Zi a jejich mláďata! 🇫🇷🐼"
             },
             {
                 name: "Chengdu Research Base",
@@ -103,50 +60,9 @@ class PandaRadar {
                 lat: 30.6736,
                 lng: 104.1034,
                 pandas: 200,
-                details: "Mekka všech milovníků pand! Více než 200 pand v přirozeném prostředí! 🏮"
-            },
-            {
-                name: "Wolong Panda Reserve",
-                location: "Sichuan, Čína",
-                lat: 30.8647,
-                lng: 103.1653,
-                pandas: 150,
-                details: "Největší panda rezervace na světě v srdci hor Sichuan! 🏔️"
-            },
-            {
-                name: "Ueno Zoo",
-                location: "Tokio, Japonsko",
-                lat: 35.7156,
-                lng: 139.7719,
-                pandas: 3,
-                details: "Ri Ri, Shin Shin a Xiang Xiang - japonští panda miláčci! 🇯🇵"
-            },
-            {
-                name: "Adventure World",
-                location: "Wakayama, Japonsko",
-                lat: 33.6833,
-                lng: 135.3667,
-                pandas: 6,
-                details: "Nejúspěšnější panda chov mimo Čínu! Safari s pandami! 🚗"
-            },
-            {
-                name: "Zoo Negara",
-                location: "Kuala Lumpur, Malajsie",
-                lat: 3.2067,
-                lng: 101.7544,
-                pandas: 2,
-                details: "Liang Liang a Xing Xing v tropickém ráji! 🌴"
-            },
-            {
-                name: "Adelaide Zoo", 
-                location: "Adelaide, Austrálie",
-                lat: -34.9167,
-                lng: 138.6051,
-                pandas: 2,
-                details: "Wang Wang a Funi - jediné pandy v jižní polokouli! 🇦🇺"
+                details: "Mekka všech milovníků pand! Více než 200 pand! 🏮"
             }
         ];
-
         this.updateStats();
     }
 
@@ -219,6 +135,15 @@ class PandaRadar {
                         <div class="info-value">${zoo.location}</div>
                     </div>
                 </div>
+                ${zoo.pandaNames ? `
+                <div class="info-item">
+                    <span class="info-icon">🏷️</span>
+                    <div class="info-text">
+                        <div class="info-label">Jména pand:</div>
+                        <div class="info-value">${zoo.pandaNames.join(', ')}</div>
+                    </div>
+                </div>
+                ` : ''}
                 <div class="info-item">
                     <span class="info-icon">🌟</span>
                     <div class="info-text">
@@ -226,6 +151,24 @@ class PandaRadar {
                         <div class="info-value">${zoo.details}</div>
                     </div>
                 </div>
+                ${zoo.established ? `
+                <div class="info-item">
+                    <span class="info-icon">📅</span>
+                    <div class="info-text">
+                        <div class="info-label">Pandy od:</div>
+                        <div class="info-value">${zoo.established}</div>
+                    </div>
+                </div>
+                ` : ''}
+                ${zoo.contract ? `
+                <div class="info-item">
+                    <span class="info-icon">📋</span>
+                    <div class="info-text">
+                        <div class="info-label">Smlouva:</div>
+                        <div class="info-value">${zoo.contract}</div>
+                    </div>
+                </div>
+                ` : ''}
                 ${this.userLocation ? `
                 <div class="info-item">
                     <span class="info-icon">🛣️</span>
@@ -394,8 +337,17 @@ class PandaRadar {
 }
 
 // Inicializace aplikace po načtení stránky
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     window.pandaRadar = new PandaRadar();
+    
+    // Zobrazení loading stavu
+    const zooList = document.getElementById('zooList');
+    zooList.innerHTML = `
+        <div class="loading">
+            <div style="font-size: 2rem; margin-bottom: 10px;">🐼</div>
+            Načítám nejnovější data o pandách... 🌍
+        </div>
+    `;
 });
 
 // Přidání speciálních efektů pro extra roztomilost
