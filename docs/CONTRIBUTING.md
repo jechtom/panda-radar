@@ -137,33 +137,33 @@ The most common type of contribution! Steps:
 
 ## 📋 Commit Message Format
 
-Používejte [Conventional Commits](https://conventionalcommits.org/):
+Use [Conventional Commits](https://conventionalcommits.org/):
 
 ```
-feat: přidání Zoo Berlin s 2 pandami
-fix: oprava počítání vzdálenosti na mobilech  
-docs: aktualizace README s novými zoo
-style: zlepšení responzivního designu pro tablety
-refactor: optimalizace kódu pro počítání statistik
+feat: add Zoo Berlin with 2 pandas
+fix: fix distance calculation on mobile  
+docs: update README with new zoos
+style: improve responsive design for tablets
+refactor: optimize code for statistics calculation
 ```
 
-## 🎯 Roadmapa
+## 🎯 Roadmap
 
-Nápady na budoucí funkce:
-- [ ] Filtrování zoo podle země/kontinentu
-- [ ] Tmavý režim
-- [ ] Sharing na sociálních sítích
-- [ ] Více jazyků (angličtina, němčina)
-- [ ] PWA podpora (offline režim)
-- [ ] Favoritní zoo
-- [ ] Notifications o nových pandích mláďatech
+Ideas for future features:
+- [ ] Filter zoos by country/continent
+- [ ] Dark mode
+- [ ] Social media sharing
+- [ ] Multiple languages (English, German)
+- [ ] PWA support (offline mode)
+- [ ] Favorite zoos
+- [ ] Notifications about new panda cubs
 
-## ❓ Potřebujete pomoct?
+## ❓ Need Help?
 
-- Otevřete [Discussion](https://github.com/yourusername/panda-radar/discussions)
-- Označte maintainera v issue
-- Pošlete email (pokud je k dispozici)
+- Open a [Discussion](https://github.com/yourusername/panda-radar/discussions)
+- Tag the maintainer in an issue
+- Send email (if available)
 
-## 🐾 Děkujeme!
+## 🐾 Thank You!
 
-Každý příspěvek pomáhá udělat svět pand lepším místem! 🐼💚
+Every contribution helps make the panda world a better place! 🐼💚
