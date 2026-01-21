@@ -206,13 +206,16 @@ class PandaRadar {
 
         modalTitle.textContent = `🐼 ${zoo.name}`;
         
+        // Panda emoji podle počtu pand (max 15)
+        const pandaEmojis = '🐼'.repeat(Math.min(zoo.pandas, 15));
+        
         modalBody.innerHTML = `
             <div class="panda-info">
                 <div class="info-item">
                     <span class="info-icon">🐼</span>
                     <div class="info-text">
                         <div class="info-label">Počet pand:</div>
-                        <div class="info-value">${zoo.pandas} ${zoo.pandas === 1 ? 'panda' : zoo.pandas < 5 ? 'pandy' : 'pand'}</div>
+                        <div class="info-value">${pandaEmojis}<br>${zoo.pandas} ${zoo.pandas === 1 ? 'panda' : zoo.pandas < 5 ? 'pandy' : 'pand'}</div>
                     </div>
                 </div>
                 <div class="info-item">
