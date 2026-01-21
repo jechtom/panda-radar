@@ -1,0 +1,8 @@
+# SEO optimalizace pro Panda Radar
+# Robots.txt soubor pro vyhledávače
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://yourusername.github.io/panda-radar/sitemap.xml

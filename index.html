@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐼 Panda Radar - Najdi nejbližší pandy!</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Interaktivní mapa zoologických zahrad s pandami po celém světě. Najděte nejbližší pandy ve vaší oblasti! 🐼🌍">
+    <meta name="keywords" content="pandy, zoo, mapa, zoologická zahrada, panda radar, pandy ve světě, interaktivní mapa">
+    <meta name="author" content="Panda Radar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/panda-radar/">
+    <meta property="og:title" content="🐼 Panda Radar - Najdi nejbližší pandy!">
+    <meta property="og:description" content="Interaktivní mapa zoologických zahrad s pandami po celém světě. Najděte nejbližší pandy ve vaší oblasti!">
+    <meta property="og:image" content="https://yourusername.github.io/panda-radar/assets/screenshot.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/panda-radar/">
+    <meta property="twitter:title" content="🐼 Panda Radar - Najdi nejbližší pandy!">
+    <meta property="twitter:description" content="Interaktivní mapa zoologických zahrad s pandami po celém světě. Najděte nejbližší pandy ve vaší oblasti!">
+    <meta property="twitter:image" content="https://yourusername.github.io/panda-radar/assets/screenshot.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐼</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">
+                🐼 Panda Radar
+            </h1>
+            <p class="subtitle">Najdi nejbližší roztomilé pandy ve světě! 🌍</p>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalZoos">0</span>
+                <span class="stat-label">Zoo s pandami</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalPandas">0</span>
+                <span class="stat-label">Celkem pand</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="nearestDistance">-</span>
+                <span class="stat-label">Nejbližší (km)</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="map-container">
+            <div id="map" class="map"></div>
+            <div class="controls">
+                <button id="findMe" class="btn btn-primary">
+                    📍 Najdi moji polohu
+                </button>
+                <button id="showAll" class="btn btn-secondary">
+                    🌍 Zobraz všechny pandy
+                </button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>🐼 Nejbližší zoo s pandami</h2>
+            </div>
+            <div id="zooList" class="zoo-list">
+                <div class="loading">
+                    Hledám nejroztomilejší pandy... 🐾
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="pandaModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">🐼 Zoo Info</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Obsah bude dynamicky vložen -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Vytvořeno s 💚 pro milovníky pand | Data jsou orientační</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

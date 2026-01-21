@@ -1,0 +1,416 @@
+/* Panda Radar - Roztomilý styl pro milovníky pand */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka', cursive;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    animation: bounce 2s infinite;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #34495e;
+    font-weight: 400;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+/* Main Layout */
+.main {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.map-container {
+    flex: 2;
+    min-width: 300px;
+    position: relative;
+}
+
+.map {
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Fredoka', cursive;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #48cae4, #023e8a);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: linear-gradient(45deg, #ff9a9e, #fecfef);
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.zoo-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.zoo-item {
+    background: rgba(255, 255, 255, 0.8);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 5px solid #ff6b6b;
+}
+
+.zoo-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.zoo-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.zoo-location {
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.zoo-pandas {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.zoo-distance {
+    color: #27ae60;
+    font-size: 0.9rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+.modal-header {
+    background: linear-gradient(45deg, #ff9a9e, #fecfef);
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2c3e50;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #e74c3c;
+}
+
+/* Panda Info Styles */
+.panda-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 182, 193, 0.2);
+    border-radius: 10px;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.info-value {
+    color: #7f8c8d;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Panda Marker Custom Styles */
+.panda-marker {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pandaBounce 2s infinite;
+}
+
+@keyframes pandaBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Custom Popup Styles */
+.leaflet-popup-content-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.leaflet-popup-content {
+    font-family: 'Fredoka', cursive;
+    margin: 15px;
+}
+
+.popup-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.popup-pandas {
+    color: #e74c3c;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.popup-location {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .stats {
+        gap: 15px;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+        padding: 10px 15px;
+    }
+    
+    .controls {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 10px;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .sidebar {
+        max-width: none;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+    }
+}
