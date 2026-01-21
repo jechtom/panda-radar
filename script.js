@@ -1,4 +1,4 @@
-// Panda Radar - JavaScript pro interaktivní mapu pand
+// Panda Radar - JavaScript for interactive panda map
 class PandaRadar {
     constructor() {
         this.map = null;
@@ -13,16 +13,16 @@ class PandaRadar {
         this.initMap();
         await this.loadPandaData();
         this.bindEvents();
-        // Inicializace seznamu zoo i bez geolokace
+        // Initialize zoo list even without geolocation
         this.updateZooList();
         console.log('✅ Initialization completed');
     }
 
-    // Načtení dat o zoo s pandami z JSON souboru
+    // Load data about zoos with pandas from JSON file
     async loadPandaData() {
         console.log('📁 Loading data from pandas.json...');
         
-        // Zkusím různé cesty k JSON souboru
+        // Try different paths to JSON file
         const possiblePaths = [
             './data/pandas.json',
             'data/pandas.json',
@@ -31,7 +31,7 @@ class PandaRadar {
         
         for (const path of possiblePaths) {
             try {
-                console.log(`🔍 Zkouším cestu: ${path}`);
+                console.log(`🔍 Trying path: ${path}`);
                 const response = await fetch(path);
                 console.log('📡 Response status:', response.status, response.statusText);
                 
@@ -43,19 +43,19 @@ class PandaRadar {
                 const data = await response.json();
                 console.log('📊 Loaded data:', data);
                 
-                // Filtrace pouze aktivních zoo a přidání do pole
+                // Filter only active zoos and add to array
                 this.pandaZoos = data.zoos.filter(zoo => zoo.status === 'active');
-                console.log(`🐼 Nalezeno ${this.pandaZoos.length} aktivních zoo s pandami`);
+                console.log(`🐼 Found ${this.pandaZoos.length} active zoos with pandas`);
                 
-                // Dopočítání statistik z reálných dat
+                // Calculate statistics from real data
                 const totalZoos = this.pandaZoos.length;
                 const totalPandas = this.pandaZoos.reduce((sum, zoo) => sum + zoo.pandas, 0);
                 
-                // Zobrazení metadat v konzoli
+                // Display metadata in console
                 console.log(`🐼 Loaded ${totalZoos} zoos with ${totalPandas} pandas`);
                 console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
                 
-                // Aktualizace patičky s informacemi o datech
+                // Update footer with data information
                 this.updateFooter(data.metadata);
                 
                 // Přidání markerů na mapu až po načtení dat
@@ -75,8 +75,9 @@ class PandaRadar {
             }
         }
         
-        // Žádná cesta nefungovala
-        console.error('❌ Žádná cesta k pandas.json nefunguje!');
+        // No path worked
+        console.error('❌ No working path to pandas.json!');
+        console.error('❌ Application cannot work without panda data');
     }
 
     // Aktualizace patičky s informacemi o datech
