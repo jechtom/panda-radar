@@ -1,186 +1,186 @@
-> **🎨 Vibe Coding Experiment**  
+> *🎨 Vibe Coding Experiment*
 
 # Panda Radar 🐼
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://yourusername.github.io/panda-radar)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://jechtom.github.io/panda-radar)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Roztomilá webová aplikace pro milovníky pand, která zobrazuje na interaktivní mapě zoologické zahrady s pandami po celém světě!
+A cute web application for panda lovers that displays zoos with pandas around the world on an interactive map!
 
 ## 🌟 Demo
 
-**Živá aplikace:** https://yourusername.github.io/panda-radar
+**Live application:** https://jechtom.github.io/panda-radar
 
-![Panda Radar Screenshot](assets/screenshot.png)
+## ✨ Features
 
-## ✨ Funkce
+- 🗺️ **Interactive map** with panda emoji markers
+- 📍 **Geolocation** - finds your location and sorts zoos by distance  
+- 🐾 **Detailed information** about each panda zoo
+- 📊 **Statistics** - total number of zoos and pandas
+- 📱 **Responsive design** for mobile and tablets
+- 🎋 **Cute animations** including falling bamboo leaves
+- 🌍 **Global coverage** - panda data from around the world
 
-- 🗺️ **Interaktivní mapa** s panda emoji markery
-- 📍 **Geolokace** - najde vaší polohu a seřadí zoo podle vzdálenosti  
-- 🐾 **Detailní informace** o každé zoo s pandami
-- 📊 **Statistiky** - celkový počet zoo a pand
-- 📱 **Responzivní design** pro mobily a tablety
-- 🎋 **Roztomilé animace** včetně padajících bambusových listů
-- 🌍 **Světové pokrytí** - data o pandách z celého světe
+## 🚀 Quick Start
 
-## 🚀 Rychlé spuštění
+### Online version
+Visit: https://jechtom.github.io/panda-radar
 
-### Online verze
-Navštivte: https://yourusername.github.io/panda-radar
-
-### Lokální spuštění
+### Local setup
 ```bash
-git clone https://github.com/yourusername/panda-radar.git
+git clone https://github.com/jechtom/panda-radar.git
 cd panda-radar
-# Otevřete index.html v prohlížeči nebo spusťte lokální server
+# Open index.html in browser or run local server
 python -m http.server 8000
-# Nebo použijte Live Server v VS Code
+# Or use Live Server in VS Code
 ``` 
 
-## 🎯 Zahrnuté zoo s pandami
+## 🎯 Included Panda Zoos
 
-Aplikace obsahuje data o více než 15 zoologických zahradách s pandami:
+The application contains data about more than 15 zoos with pandas:
 
-### 🇪🇺 Evropa
-- **Zoo Berlin** (Německo) - Meng Meng a Jiao Qing
-- **Schönbrunn Zoo** (Rakousko) - Yang Yang a Yuan Yuan  
-- **Pairi Daiza** (Belgie) - největší evropská kolonie pand
-- **Zoo de Beauval** (Francie) - jediná zoo ve Francii s pandami
-- **Edinburgh Zoo** (Skotsko) - Tian Tian a Yang Guang
-- **Zoo Madrid** (Španělsko) - španělská panda rodina
-- **Moscow Zoo** (Rusko) - moderní panda pavilon
+### 🇪🇺 Europe
+- **Zoo Berlin** (Germany) - Meng Meng and Jiao Qing
+- **Schönbrunn Zoo** (Austria) - Yang Yang and Yuan Yuan  
+- **Pairi Daiza** (Belgium) - largest European panda colony
+- **Zoo de Beauval** (France) - only zoo in France with pandas
+- **Edinburgh Zoo** (Scotland) - Tian Tian and Yang Guang
+- **Zoo Madrid** (Spain) - Spanish panda family
+- **Moscow Zoo** (Russia) - modern panda pavilion
 
-### 🌏 Asie  
-- **Chengdu Research Base** (Čína) - více než 200 pand!
-- **Wolong Panda Reserve** (Čína) - největší rezervace
-- **Ueno Zoo** (Japonsko) - japonští panda miláčci
-- **Adventure World** (Japonsko) - nejúspěšnější chov mimo Čínu
-- **Zoo Negara** (Malajsie) - pandy v tropech
+### 🌏 Asia  
+- **Chengdu Research Base** (China) - more than 200 pandas!
+- **Wolong Panda Reserve** (China) - largest reserve
+- **Ueno Zoo** (Japan) - Japanese panda favorites
+- **Adventure World** (Japan) - most successful breeding outside China
+- **Zoo Negara** (Malaysia) - pandas in the tropics
 
-### 🌎 Ostatní kontinenty
-- **San Diego Zoo** (USA) - legendární panda program
-- **National Zoo Washington** (USA) - americké panda hvězdy  
-- **Adelaide Zoo** (Austrálie) - jediné pandy v jižní polokouli
+### 🌎 Other Continents
+- **San Diego Zoo** (USA) - legendary panda program
+- **National Zoo Washington** (USA) - American panda stars  
+- **Adelaide Zoo** (Australia) - only pandas in southern hemisphere
 
-## 🎯 O projektu
+## 🎯 About the Project
 
 ### Vibe Coding Philosophy
-Tento projekt je příkladem **"vibe coding"** - programování s důrazem na:
-- ⚡ **Rychlost prototypování** - od nápadu k funkční aplikaci
-- 🎨 **Kreativní design** - roztomilé animace a panda tématika  
-- 🚀 **Moderní technologie** - čistý vanilla JS, CSS3, HTML5
-- 💚 **Pozitivní energie** - kód psaný s láskou k pandám!
-- 🌱 **Experimentování** - zkoušení nových přístupů a nápadů
+This project is an example of **"vibe coding"** - programming with emphasis on:
+- ⚡ **Rapid prototyping** - from idea to functional application
+- 🎨 **Creative design** - cute animations and panda theming  
+- 🚀 **Modern technologies** - clean vanilla JS, CSS3, HTML5
+- 💚 **Positive energy** - code written with love for pandas!
+- 🌱 **Experimentation** - trying new approaches and ideas
 
-### Technický přístup
-- **Žádné build tools** - jednoduché soubory připravené k okamžitému spuštění
-- **Minimal dependencies** - pouze Leaflet.js pro mapy
-- **Progressive enhancement** - funguje i bez JavaScriptu (základní zobrazení)
-- **Mobile-first design** - responzivní od základu
-- **Accessibility friendly** - sémantické HTML a klávesové ovládání
+### Technical Approach
+- **No build tools** - simple files ready for immediate execution
+- **Minimal dependencies** - only Leaflet.js for maps
+- **Progressive enhancement** - works even without JavaScript (basic display)
+- **Mobile-first design** - responsive from the ground up
+- **Accessibility friendly** - semantic HTML and keyboard navigation
 
 ## � Tech Stack
 
 **Frontend:**
-- **HTML5** - sémantická struktura s accessibility
-- **CSS3** - gradient pozadí, animace, responzivní design
-- **Vanilla JavaScript ES6+** - žádné závislosti, čistý kód!
-- **Leaflet.js** - interaktivní mapy (jediná externí závislost)
+- **HTML5** - semantic structure with accessibility
+- **CSS3** - gradient backgrounds, animations, responsive design
+- **Vanilla JavaScript ES6+** - no dependencies, clean code!
+- **Leaflet.js** - interactive maps (only external dependency)
 
 **Services & APIs:**
-- **OpenStreetMap** - mapová data (open source)
+- **OpenStreetMap** - map data (open source)
 - **Google Fonts** - typography (Fredoka font)
-- **Geolocation API** - zjištění polohy uživatele
-- **GitHub Pages** - hosting a continuous deployment
+- **Geolocation API** - user location detection
+- **GitHub Pages** - hosting and continuous deployment
 
 **Development Philosophy:**
-- 🚫 Žádné build tools nebo bundlers
-- 🚫 Žádné frameworks (React, Vue, Angular)
-- ✅ Vanilla everything - rychlé, lehké, přímočaré
+- 🚫 No build tools or bundlers
+- 🚫 No frameworks (React, Vue, Angular)
+- ✅ Vanilla everything - fast, lightweight, straightforward
 - ✅ Progressive Web App ready
 - ✅ SEO optimized
 
-## �📁 Struktura projektu
+## 📁 Project Structure
 
 ```
 panda-radar/
-├── index.html          # Hlavní HTML soubor
-├── styles.css          # CSS styly
-├── script.js           # JavaScript logika├── data/
-│   └── pandas.json     # Aktuální data o zoo s pandami (Wikipedia)├── README.md           # Dokumentace
-├── LICENSE             # MIT licence
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
+├── script.js           # JavaScript logic
+├── data/
+│   └── pandas.json     # Current panda zoo data (Wikipedia)
+├── README.md           # Documentation
+├── LICENSE             # MIT license
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml  # GitHub Actions pro automatické nasazení
+│       └── deploy.yml  # GitHub Actions for automatic deployment
 ├── assets/
-│   └── screenshot.png  # Screenshot aplikace
+│   └── screenshot.png  # Application screenshot
 └── docs/
-    └── CONTRIBUTING.md # Návod pro přispěvatele
+    └── CONTRIBUTING.md # Contributor guide
 ```
 
-## 🚀 Nasazení na GitHub Pages
+## 🚀 GitHub Pages Deployment
 
-1. **Forkněte nebo klonujte** tento repozitář
-2. **Pushněte změny** do main branche
-3. **Povolte GitHub Pages** v nastavení repozitáře
-4. Aplikace se automaticky nasadí na `https://yourusername.github.io/panda-radar`
+1. **Fork or clone** this repository
+2. **Push changes** to main branch
+3. **Enable GitHub Pages** in repository settings
+4. Application will automatically deploy to `https://yourusername.github.io/panda-radar`
 
-### Automatické nasazení
+### Automatic Deployment
 
-Projekt obsahuje GitHub Actions workflow, který automaticky nasadí aplikaci při každém push do main branche.
+The project includes a GitHub Actions workflow that automatically deploys the application on every push to the main branch.
 
-## 🤝 Přispívání
+## 🤝 Contributing
 
-Rádi uvítáme příspěvky! Podívejte se na [CONTRIBUTING.md](docs/CONTRIBUTING.md) pro více informací.
+We welcome contributions! Check out [CONTRIBUTING.md](docs/CONTRIBUTING.md) for more information.
 
-### Jak přidat novou zoo s pandami:
+### How to add a new panda zoo:
 
-1. Otevřete [`data/pandas.json`](data/pandas.json)
-2. Najděte pole `zoos` 
-3. Přidejte nový objekt s informacemi o zoo:
+1. Open [`data/pandas.json`](data/pandas.json)
+2. Find the `zoos` array 
+3. Add a new object with zoo information:
    ```json
    {
      "id": "unique_zoo_id",
-     "name": "Název Zoo",
-     "location": "Město, Země",
+     "name": "Zoo Name",
+     "location": "City, Country",
      "country": "Country",
      "continent": "Europe/Asia/North America/Australia",
      "lat": 50.1234,
      "lng": 14.5678,
      "pandas": 2,
      "status": "active",
-     "details": "Zajímavé informace o pandách! 🐼",
-     "pandaNames": ["Jméno 1", "Jméno 2"],
+     "details": "Interesting panda information! 🐼",
+     "pandaNames": ["Name 1", "Name 2"],
      "established": 2024,
      "contract": "loan from China"
    }
    ```
 
-## 📝 Licence
+## 📝 License
 
-Tento projekt je licencován pod MIT licencí - viz [LICENSE](LICENSE) soubor.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file.
 
 ## 🎨 Design
 
-Aplikace používá veselou barevnou paletu s gradient pozadími, zaoblenými rohy a jemnými stíny. Všechny elementy mají panda/bambus tématiku s roztomilými emoji a animacemi.
+The application uses a cheerful color palette with gradient backgrounds, rounded corners, and subtle shadows. All elements have panda/bamboo theming with cute emoji and animations.
 
-## 📱 Responzivní design
+## 📱 Responsive Design
 
-- **Desktop** - dvousloupcové rozložení s mapou a postranním panelem
-- **Tablet** - adaptivní rozložení s flexibilními sloupci  
-- **Mobil** - jednoduchý stack layout s touch-friendly kontrolami
+- **Desktop** - two-column layout with map and sidebar
+- **Tablet** - adaptive layout with flexible columns  
+- **Mobile** - simple stack layout with touch-friendly controls
 
 ## � Kontakt
 
-Máte nápad na vylepšení? Našli jste chybu? Vytvořte [issue](https://github.com/yourusername/panda-radar/issues) nebo pošlete pull request!
+Máte nápad na vylepšení? Našli jste chybu? Vytvořte [issue](https://github.com/jechtom/panda-radar/issues) nebo pošlete pull request!
 
-## 🐼 Pro milovníky pand
+## 🐼 For Panda Lovers
 
-Každá zoo má detailní informace o svých pandách včetně jmen, počtu a specialit. Aplikace také obsahuje easter eggs jako padající bambusové listy a animující panda emoji!
+Each zoo has detailed information about its pandas including names, count, and specialties. The application also contains easter eggs like falling bamboo leaves and animated panda emoji!
 
 ---
 
-*Vytvořeno s 💚 pro všechny milovníky pand během experimentální coding session!* 🐼
+*Created with 💚 for all panda lovers during an experimental coding session!* 🐼
 
-**Fun Fact:** Věděli jste, že pandy tráví jedením až 14 hodin denně? 🎋  
-**Vibe Fact:** Tento projekt byl nakódován s láskou k pandám a experimentálnímu programování! ✨
+**Fun Fact:** Did you know that pandas spend up to 14 hours a day eating? 🎋  
+**Vibe Fact:** This project was coded with love for pandas and experimental programming! ✨

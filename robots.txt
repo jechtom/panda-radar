@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yourusername.github.io/panda-radar/sitemap.xml
+Sitemap: https://jechtom.github.io/panda-radar/sitemap.xml

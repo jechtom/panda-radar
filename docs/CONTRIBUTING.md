@@ -5,7 +5,7 @@ Thank you for your interest in contributing to Panda Radar! Every contribution i
 ## 🚀 How to Contribute
 
 ### 1. Bug Reports
-If you find a bug, please create an [issue](https://github.com/yourusername/panda-radar/issues) with the following information:
+If you find a bug, please create an [issue](https://github.com/jechtom/panda-radar/issues) with the following information:
 - Bug description
 - Steps to reproduce
 - Expected behavior
@@ -14,7 +14,7 @@ If you find a bug, please create an [issue](https://github.com/yourusername/pand
 
 ### 2. Feature Suggestions
 For new feature proposals:
-- Open an [issue](https://github.com/yourusername/panda-radar/issues)
+- Open an [issue](https://github.com/jechtom/panda-radar/issues)
 - Describe the proposed feature
 - Explain why it would be useful
 - Optionally attach mockups or sketches
@@ -24,7 +24,7 @@ For new feature proposals:
 #### Fork and Clone
 ```bash
 # Fork the repository via GitHub UI
-git clone https://github.com/yourusername/panda-radar.git
+git clone https://github.com/jechtom/panda-radar.git
 cd panda-radar
 ```
 
@@ -160,7 +160,7 @@ Ideas for future features:
 
 ## ❓ Need Help?
 
-- Open a [Discussion](https://github.com/yourusername/panda-radar/discussions)
+- Open a [Discussion](https://github.com/jechtom/panda-radar/discussions)
 - Tag the maintainer in an issue
 - Send email (if available)
 
