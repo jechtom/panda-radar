@@ -146,17 +146,11 @@ class PandaRadar {
                 return;
             }
             
-            // Vytvoření custom HTML markeru s panda emoji
-            const pandaIcon = L.divIcon({
-                className: 'panda-marker',
-                html: zoo.pandas > 0 ? '🐼' : '🐾',
-                iconSize: [40, 40],
-                iconAnchor: [20, 20]
-            });
-
-            // Vytvoření markeru
-            const marker = L.marker([zoo.lat, zoo.lng], { icon: pandaIcon })
+            // Obyčejný modrý marker bez emoji - funguje spolehlivě
+            const marker = L.marker([zoo.lat, zoo.lng])
                 .addTo(this.map);
+            
+            console.log(`✅ Panda marker ${index + 1} přidán na pozici [${zoo.lat}, ${zoo.lng}]`);
 
             // Popup s informacemi o zoo
             const popupContent = `
@@ -175,7 +169,17 @@ class PandaRadar {
             this.markers.push({ marker, zoo });
         });
         
-        console.log(`✅ Přidáno ${this.markers.length} markerů na mapu`);
+        console.log(`✅ Přidáno ${this.markers.length} panda markerů na mapu`);
+        
+        // Test první marker po 2 sekundách
+        if (this.markers.length > 0) {
+            setTimeout(() => {
+                console.log('🧪 Test: Otevírám popup prvního markeru...');
+                const firstMarker = this.markers[0];
+                this.map.setView([firstMarker.zoo.lat, firstMarker.zoo.lng], 8);
+                firstMarker.marker.openPopup();
+            }, 2000);
+        }
     }
 
     showZooDetails(zoo) {
