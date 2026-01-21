@@ -47,8 +47,12 @@ class PandaRadar {
                 this.pandaZoos = data.zoos.filter(zoo => zoo.status === 'active');
                 console.log(`🐼 Nalezeno ${this.pandaZoos.length} aktivních zoo s pandami`);
                 
+                // Dopočítání statistik z reálných dat
+                const totalZoos = this.pandaZoos.length;
+                const totalPandas = this.pandaZoos.reduce((sum, zoo) => sum + zoo.pandas, 0);
+                
                 // Zobrazení metadat v konzoli
-                console.log(`🐼 Loaded ${data.metadata.totalZoos} zoos with ${data.metadata.totalPandas} pandas`);
+                console.log(`🐼 Loaded ${totalZoos} zoos with ${totalPandas} pandas`);
                 console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
                 
                 // Přidání markerů na mapu až po načtení dat
