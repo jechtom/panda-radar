@@ -55,6 +55,9 @@ class PandaRadar {
                 console.log(`🐼 Loaded ${totalZoos} zoos with ${totalPandas} pandas`);
                 console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
                 
+                // Aktualizace patičky s informacemi o datech
+                this.updateFooter(data.metadata);
+                
                 // Přidání markerů na mapu až po načtení dat
                 if (this.map && this.pandaZoos.length > 0) {
                     console.log('🗺️ Mapa je připravena, přidávám markery...');
@@ -117,6 +120,15 @@ class PandaRadar {
         }
         
         this.updateStats();
+    }
+
+    // Aktualizace patičky s informacemi o datech
+    updateFooter(metadata) {
+        const dataInfo = document.getElementById('dataInfo');
+        if (dataInfo && metadata) {
+            const formattedDate = new Date(metadata.lastUpdated).toLocaleDateString('cs-CZ');
+            dataInfo.innerHTML = `Aktualizace: ${formattedDate} | Zdroj: ${metadata.source}`;
+        }
     }
 
     initMap() {
