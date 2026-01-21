@@ -1,7 +1,7 @@
 {
   "name": "Panda Radar",
   "short_name": "PandaRadar",
-  "description": "Najdi nejbližší pandy ve světě! Interaktivní mapa zoologických zahrad s pandami.",
+  "description": "Find the nearest pandas in the world! Interactive map of zoos with pandas.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#667eea",

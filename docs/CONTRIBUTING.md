@@ -1,76 +1,76 @@
-# Přispívání k Panda Radar 🐼
+# Contributing to Panda Radar 🐼
 
-Děkujeme za váš zájem přispět k Panda Radar! Každý příspěvek je vítán, ať už se jedná o hlášení chyb, návrhy na vylepšení nebo přímo kód.
+Thank you for your interest in contributing to Panda Radar! Every contribution is welcome, whether it's bug reports, feature suggestions, or direct code contributions.
 
-## 🚀 Jak přispět
+## 🚀 How to Contribute
 
-### 1. Nahlášení chyby
-Pokud najdete chybu, vytvořte prosím [issue](https://github.com/yourusername/panda-radar/issues) s následujícími informacemi:
-- Popis chyby
-- Kroky k reprodukci
-- Očekávané chování
-- Screenshots (pokud je to relevantní)
-- Informace o prohlížeči a operačním systému
+### 1. Bug Reports
+If you find a bug, please create an [issue](https://github.com/yourusername/panda-radar/issues) with the following information:
+- Bug description
+- Steps to reproduce
+- Expected behavior
+- Screenshots (if relevant)
+- Browser and operating system information
 
-### 2. Návrh na vylepšení
-Pro návrhy nových funkcí:
-- Otevřete [issue](https://github.com/yourusername/panda-radar/issues)
-- Popište navrhovanou funkci
-- Vysvětlete, proč by byla užitečná
-- Případně přiložte mockupy nebo nákresy
+### 2. Feature Suggestions
+For new feature proposals:
+- Open an [issue](https://github.com/yourusername/panda-radar/issues)
+- Describe the proposed feature
+- Explain why it would be useful
+- Optionally attach mockups or sketches
 
-### 3. Přímé kódování
+### 3. Direct Coding
 
-#### Fork a Clone
+#### Fork and Clone
 ```bash
-# Fork repozitáře přes GitHub UI
+# Fork the repository via GitHub UI
 git clone https://github.com/yourusername/panda-radar.git
 cd panda-radar
 ```
 
-#### Vytvoření branche
+#### Create Branch
 ```bash
-git checkout -b feature/nova-funkce
-# nebo
-git checkout -b bugfix/oprava-chyby
+git checkout -b feature/new-feature
+# or
+git checkout -b bugfix/bug-fix
 ```
 
-#### Vývoj
-1. Proveďte změny
-2. Testujte v různých prohlížečích
-3. Ujistěte se, že aplikace funguje offline
+#### Development
+1. Make changes
+2. Test in different browsers
+3. Ensure the application works offline
 
-#### Commit a Push
+#### Commit and Push
 ```bash
 git add .
-git commit -m "feat: přidání nové funkce XYZ"
-git push origin feature/nova-funkce
+git commit -m "feat: add new XYZ feature"
+git push origin feature/new-feature
 ```
 
 #### Pull Request
-1. Otevřete Pull Request na GitHubu
-2. Popište změny
-3. Připojte relevantní issues (#123)
-4. Počkejte na review
+1. Open a Pull Request on GitHub
+2. Describe the changes
+3. Link relevant issues (#123)
+4. Wait for review
 
 ## 📝 Coding Standards
 
 ### HTML
-- Používejte sémantické HTML5 elementy
-- Zachovávejte accessibility (alt texty, ARIA labels)
-- Používejte české popisy pro UI elementy
+- Use semantic HTML5 elements
+- Maintain accessibility (alt texts, ARIA labels)
+- Use English descriptions for UI elements
 
 ### CSS
-- Používejte CSS custom properties (proměnné)
-- Zachovávejte responzivní design
-- Preferujte Flexbox/Grid před float
-- Používejte BEM metodologii pro třídy
+- Use CSS custom properties (variables)
+- Maintain responsive design
+- Prefer Flexbox/Grid over float
+- Use BEM methodology for classes
 
 ### JavaScript
-- Používejte moderní ES6+ syntax
-- Žádné externí závislosti kromě Leaflet.js
-- Komentujte složitější logiku
-- Používejte async/await místo callback funkcí
+- Use modern ES6+ syntax
+- No external dependencies except Leaflet.js
+- Comment complex logic
+- Use async/await instead of callback functions
 
 ## 🐼 Přidání nové zoo s pandami
 
