@@ -72,68 +72,68 @@ git push origin feature/new-feature
 - Comment complex logic
 - Use async/await instead of callback functions
 
-## 🐼 Přidání nové zoo s pandami
+## 🐼 Adding New Panda Zoos
 
-Nejčastější typ příspěvku! Postup:
+The most common type of contribution! Steps:
 
-1. Otevřete `script.js`
-2. Najděte pole `pandaZoos` v konstruktoru
-3. Přidejte nový objekt:
+1. Open `script.js`
+2. Find the `pandaZoos` array in the constructor
+3. Add a new object:
 
 ```javascript
 {
-    name: "Název Zoo",
-    location: "Město, Země", 
+    name: "Zoo Name",
+    location: "City, Country", 
     lat: 12.3456,          // GPS latitude
     lng: 78.9012,          // GPS longitude  
-    pandas: 2,             // Aktuální počet pand
-    details: "Zajímavé info o pandách! 🐼"
+    pandas: 2,             // Current panda count
+    details: "Interesting panda info! 🐼"
 }
 ```
 
-### Ověření GPS souřadnic
-- Použijte [Google Maps](https://maps.google.com) nebo [OpenStreetMap](https://openstreetmap.org)
-- Klikněte pravým na zoo → "Co je zde?" → zkopírujte souřadnice
-- Ověřte, že marker se zobrazí na správném místě
+### GPS Coordinates Verification
+- Use [Google Maps](https://maps.google.com) or [OpenStreetMap](https://openstreetmap.org)
+- Right-click on the zoo → "What's here?" → copy coordinates
+- Verify that the marker appears in the correct location
 
-### Aktuální informace
-- Ověřte počet pand na oficiálních stránkách zoo
-- Přidejte zajímavé informace (jména pand, speciální programy)
-- Používejte panda emoji v detailech! 🐼
+### Current Information
+- Verify panda count on official zoo websites
+- Add interesting information (panda names, special programs)
+- Use panda emoji in details! 🐼
 
 ## 🎨 Design Guidelines
 
-### Barevná paleta
-- Primární: `#ff6b6b` (coral)
-- Sekundární: `#48cae4` (sky blue)
+### Color Palette
+- Primary: `#ff6b6b` (coral)
+- Secondary: `#48cae4` (sky blue)
 - Accent: `#feca57` (warm yellow)
 - Text: `#2c3e50` (dark blue-gray)
 - Muted: `#7f8c8d` (gray)
 
 ### Typography
-- Hlavní font: Fredoka (Google Fonts)
+- Main font: Fredoka (Google Fonts)
 - Fallback: cursive, sans-serif
-- Používejte emoji konzistentně (🐼🐾🎋📍🌍)
+- Use emoji consistently (🐼🐾🎋📍🌍)
 
-### Animace
-- Zachovávejte playful ale ne rušivé animace
-- Používejte ease-in-out transitions
-- Animace by měly trvat 0.3s nebo méně
+### Animations
+- Keep playful but not disruptive animations
+- Use ease-in-out transitions
+- Animations should last 0.3s or less
 
-## 🧪 Testování
+## 🧪 Testing
 
-### Před submitnutím PR:
-- [ ] Aplikace funguje v Chrome/Safari/Firefox/Edge
-- [ ] Responzivní design funguje na mobilu
-- [ ] Geolokace funguje (testujte s povolenými/zakázanými právy)
-- [ ] Všechny animace fungují hladce
-- [ ] Žádné JavaScript chyby v console
-- [ ] Nové zoo se zobrazují správně na mapě
+### Before submitting PR:
+- [ ] Application works in Chrome/Safari/Firefox/Edge
+- [ ] Responsive design works on mobile
+- [ ] Geolocation works (test with allowed/denied permissions)
+- [ ] All animations work smoothly
+- [ ] No JavaScript errors in console
+- [ ] New zoos display correctly on map
 
-### Testování na různých zařízeních:
+### Testing on different devices:
 - Desktop (1920x1080)
 - Tablet (768x1024)  
-- Mobil (375x667)
+- Mobile (375x667)
 
 ## 📋 Commit Message Format
 
