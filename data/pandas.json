@@ -53,14 +53,14 @@
     {
       "id": "schoenbrunn_zoo",
       "name": "Schönbrunn Zoo",
-      "location": "Vídeň, Rakousko",
+      "location": "Vienna, Austria",
       "country": "Austria",
       "continent": "Europe",
       "lat": 48.1825,
       "lng": 16.3023,
       "pandas": 2,
       "status": "active", 
-      "details": "Yang Yang a Yuan Yuan žijí v krásném pavilonu s klimatizací! 🇦🇹🎋",
+      "details": "Yang Yang and Yuan Yuan live in a beautiful air-conditioned pavilion! 🇦🇹🎋",
       "pandaNames": ["Yang Yang", "Yuan Yuan"],
       "established": 2003,
       "contract": "loan from China"
@@ -68,14 +68,14 @@
     {
       "id": "madrid_zoo",
       "name": "Zoo Madrid",
-      "location": "Madrid, Španělsko",
+      "location": "Madrid, Spain",
       "country": "Spain",
       "continent": "Europe",
       "lat": 40.4086,
       "lng": -3.7573,
       "pandas": 2,
       "status": "active",
-      "details": "Jin Xi a Zhu Yu - nový pár přijel v dubnu 2024! 🇪🇸✨",
+      "details": "Jin Xi and Zhu Yu - new pair arrived in April 2024! 🇪🇸✨",
       "pandaNames": ["Jin Xi", "Zhu Yu"], 
       "established": 2024,
       "contract": "loan from China"
@@ -83,14 +83,14 @@
     {
       "id": "copenhagen_zoo",
       "name": "Copenhagen Zoo",
-      "location": "Kodaň, Dánsko",
+      "location": "Copenhagen, Denmark",
       "country": "Denmark",
       "continent": "Europe",
       "lat": 55.6761,
       "lng": 12.5683,
       "pandas": 2,
       "status": "active",
-      "details": "Xing Er a Mao Sun v designovém pavilonu od Bjarke Ingels Group! 🇩🇰🏗️",
+      "details": "Xing Er and Mao Sun in design pavilion by Bjarke Ingels Group! 🇩🇰🏗️",
       "pandaNames": ["Xing Er", "Mao Sun"],
       "established": 2019,
       "contract": "loan from China"
@@ -98,14 +98,14 @@
     {
       "id": "ouwehands_zoo",
       "name": "Ouwehands Dierenpark",
-      "location": "Rhenen, Nizozemsko",
+      "location": "Rhenen, Netherlands",
       "country": "Netherlands", 
       "continent": "Europe",
       "lat": 52.0167,
       "lng": 5.5833,
       "pandas": 3,
       "status": "active",
-      "details": "Xing Ya, Wu Wen a jejich mládě Lang Yue v čínském stylu! 🇳🇱🏮",
+      "details": "Xing Ya, Wu Wen and their cub Lang Yue in Chinese style! 🇳🇱🏮",
       "pandaNames": ["Xing Ya", "Wu Wen", "Lang Yue"],
       "established": 2017,
       "contract": "loan from China"
@@ -113,14 +113,14 @@
     {
       "id": "moscow_zoo",
       "name": "Moscow Zoo",
-      "location": "Moskva, Rusko",
+      "location": "Moscow, Russia",
       "country": "Russia",
       "continent": "Europe",
       "lat": 55.7614,
       "lng": 37.5753,
       "pandas": 3,
       "status": "active",
-      "details": "Ru Yi, Ding Ding a první ruské mládě Katyusha! 🇷🇺❄️",
+      "details": "Ru Yi, Ding Ding and first Russian cub Katyusha! 🇷🇺❄️",
       "pandaNames": ["Ru Yi", "Ding Ding", "Katyusha"],
       "established": 2019,
       "contract": "loan from China"
@@ -135,7 +135,7 @@
       "lng": 114.1784,
       "pandas": 4,
       "status": "active",
-      "details": "Le Le, Ying Ying a dvojčata narozená 2024 - první pandy narozené v HK! 🇭🇰👶",
+      "details": "Le Le, Ying Ying and twins born 2024 - first pandas born in HK! 🇭🇰👶",
       "pandaNames": ["Le Le", "Ying Ying", "Male Twin", "Female Twin"],
       "established": 2007,
       "contract": "gift from China"
@@ -143,14 +143,14 @@
     {
       "id": "river_safari",
       "name": "River Safari",
-      "location": "Singapur",
+      "location": "Singapore",
       "country": "Singapore",
       "continent": "Asia", 
       "lat": 1.4043,
       "lng": 103.7930,
       "pandas": 3,
       "status": "active",
-      "details": "Kai Kai, Jia Jia a jejich mládě Le Le v klimatizovaném biodome! 🇸🇬🌿",
+      "details": "Kai Kai, Jia Jia and their cub Le Le in air-conditioned biodome! 🇸🇬🌿",
       "pandaNames": ["Kai Kai", "Jia Jia", "Le Le"],
       "established": 2012,
       "contract": "10-year loan"
@@ -165,7 +165,7 @@
       "lng": 121.5804,
       "pandas": 3,
       "status": "active", 
-      "details": "Yuan Yuan, Yuan Zai a Yuan Bao - vlastněné Taiwanem! Tuan Tuan zemřel 2022. 🇹🇼💙",
+      "details": "Yuan Yuan, Yuan Zai and Yuan Bao - owned by Taiwan! Tuan Tuan died in 2022. 🇹🇼💙",
       "pandaNames": ["Yuan Yuan", "Yuan Zai", "Yuan Bao"],
       "established": 2008,
       "contract": "gift from China"
@@ -173,14 +173,14 @@
     {
       "id": "everland",
       "name": "Everland Panda World",
-      "location": "Yongin, Jižní Korea",
+      "location": "Yongin, South Korea",
       "country": "South Korea",
       "continent": "Asia",
       "lat": 37.2946,
       "lng": 127.2025,
       "pandas": 4,
       "status": "active",
-      "details": "Ai Bao, Le Bao a dvojčata Rui Bao, Hui Bao - Fu Bao se vrátila do Číny! 🇰🇷⭐",
+      "details": "Ai Bao, Le Bao and twins Rui Bao, Hui Bao - Fu Bao returned to China! 🇰🇷⭐",
       "pandaNames": ["Ai Bao", "Le Bao", "Rui Bao", "Hui Bao"],
       "established": 2016,
       "contract": "loan from China"
@@ -188,14 +188,14 @@
     {
       "id": "ueno_zoo",
       "name": "Ueno Zoo",
-      "location": "Tokio, Japonsko",
+      "location": "Tokyo, Japan",
       "country": "Japan",
       "continent": "Asia",
       "lat": 35.7156,
       "lng": 139.7719,
       "pandas": 2,
       "status": "active",
-      "details": "Ri Ri a Shin Shin - dvojčata se vrátí do Číny v lednu 2026! 🇯🇵😢",
+      "details": "Ri Ri and Shin Shin - twins will return to China in January 2026! 🇯🇵😢",
       "pandaNames": ["Ri Ri", "Shin Shin"],
       "established": 2011,
       "contract": "loan from China"
@@ -203,14 +203,14 @@
     {
       "id": "zoo_negara",
       "name": "Zoo Negara",
-      "location": "Kuala Lumpur, Malajsie",
+      "location": "Kuala Lumpur, Malaysia",
       "country": "Malaysia",
       "continent": "Asia",
       "lat": 3.2067,
       "lng": 101.7544,
       "pandas": 2,
       "status": "active",
-      "details": "Liang Liang a Xing Xing v tropickém ráji - mláďata se vrací do Číny! 🇲🇾🌴",
+      "details": "Liang Liang and Xing Xing in tropical paradise - cubs return to China! 🇲🇾🌴",
       "pandaNames": ["Liang Liang", "Xing Xing"],
       "established": 2014,
       "contract": "loan from China"
@@ -225,7 +225,7 @@
       "lng": -77.0498,
       "pandas": 2,
       "status": "active",
-      "details": "Bao Li a Qing Bao - nový pár přijel v říjnu 2024! 🇺🇸🆕",
+      "details": "Bao Li and Qing Bao - new pair arrived in October 2024! 🇺🇸🆕",
       "pandaNames": ["Bao Li", "Qing Bao"],
       "established": 2024,
       "contract": "10-year loan"
@@ -240,7 +240,7 @@
       "lng": -117.1490,
       "pandas": 2,
       "status": "active",
-      "details": "Yun Chuan a Xin Bao - první pandy v USA po 21 letech! 🇺🇸🎉",
+      "details": "Yun Chuan and Xin Bao - first pandas in USA after 21 years! 🇺🇸🎉",
       "pandaNames": ["Yun Chuan", "Xin Bao"],
       "established": 2024,
       "contract": "loan from China"
@@ -248,14 +248,14 @@
     {
       "id": "adelaide_zoo",
       "name": "Adelaide Zoo",
-      "location": "Adelaide, Austrálie",
+      "location": "Adelaide, Australia",
       "country": "Australia",
       "continent": "Australia",
       "lat": -34.9167,
       "lng": 138.6051,
       "pandas": 2,
       "status": "active",
-      "details": "Xing Qiu a Yi Lan - jediné pandy v jižní polokouli! 🇦🇺🌏",
+      "details": "Xing Qiu and Yi Lan - only pandas in the southern hemisphere! 🇦🇺🌏",
       "pandaNames": ["Xing Qiu", "Yi Lan"],
       "established": 2009,
       "contract": "loan from China"
@@ -263,14 +263,14 @@
     {
       "id": "chapultepec_zoo",
       "name": "Chapultepec Zoo",
-      "location": "Mexico City, Mexiko",
+      "location": "Mexico City, Mexico",
       "country": "Mexico",
       "continent": "North America",
       "lat": 19.4205,
       "lng": -99.1818,
       "pandas": 1,
       "status": "active",
-      "details": "Xin Xin - poslední panda v Mexiku, speciální vlastnictví! 🇲🇽👑",
+      "details": "Xin Xin - last panda in Mexico, special ownership! 🇲🇽👑",
       "pandaNames": ["Xin Xin"],
       "established": 1975,
       "contract": "owned by Mexico"
@@ -278,14 +278,14 @@
     {
       "id": "chengdu_base",
       "name": "Chengdu Research Base",
-      "location": "Chengdu, Čína",
+      "location": "Chengdu, China",
       "country": "China",
       "continent": "Asia",
       "lat": 30.6736,
       "lng": 104.1034,
       "pandas": 200,
       "status": "active",
-      "details": "Mekka všech milovníků pand! Více než 200 pand v přirozeném prostředí! 🏮🐼",
+      "details": "Mecca of all panda lovers! More than 200 pandas in natural environment! 🏮🐼",
       "pandaNames": ["Over 200 pandas"],
       "established": 1987,
       "contract": "Chinese research facility"
@@ -293,14 +293,14 @@
     {
       "id": "wolong_reserve",
       "name": "Wolong Panda Reserve",
-      "location": "Sichuan, Čína",
+      "location": "Sichuan, China",
       "country": "China",
       "continent": "Asia",
       "lat": 30.8647,
       "lng": 103.1653,
       "pandas": 150,
       "status": "active",
-      "details": "Největší panda rezervace na světě v srdci hor Sichuan! 🏔️🐾",
+      "details": "Largest panda reserve in the world in the heart of Sichuan mountains! 🏔️🐾",
       "pandaNames": ["Over 150 pandas"],
       "established": 1963,
       "contract": "Chinese nature reserve"
@@ -309,22 +309,22 @@
   "recentChanges": [
     {
       "zoo": "Edinburgh Zoo",
-      "change": "Pandy se vrátily do Číny v prosinci 2023",
+      "change": "Pandas returned to China in December 2023",
       "date": "2023-12"
     },
     {
       "zoo": "Ähtäri Zoo (Finland)",
-      "change": "Pandy se vrátily do Číny v listopadu 2024",
+      "change": "Pandas returned to China in November 2024",
       "date": "2024-11"
     },
     {
       "zoo": "Zoo Atlanta",
-      "change": "Pandy se vrátily do Číny v říjnu 2024",
+      "change": "Pandas returned to China in October 2024",
       "date": "2024-10"
     },
     {
       "zoo": "Memphis Zoo", 
-      "change": "Ya Ya se vrátila do Číny, Le Le zemřel",
+      "change": "Ya Ya returned to China, Le Le died",
       "date": "2023-04"
     }
   ]
