@@ -146,16 +146,17 @@ class PandaRadar {
                 return;
             }
             
-            // Obyčejný modrý marker bez emoji - funguje spolehlivě
+            // Obyčejný spolehlivý marker - emoji způsobují problémy
             const marker = L.marker([zoo.lat, zoo.lng])
                 .addTo(this.map);
             
             console.log(`✅ Panda marker ${index + 1} přidán na pozici [${zoo.lat}, ${zoo.lng}]`);
 
             // Popup s informacemi o zoo
+            const pandaEmojis = '🐼'.repeat(Math.min(zoo.pandas, 10)); // Max 10 emoji
             const popupContent = `
                 <div class="popup-title">${zoo.name}</div>
-                <div class="popup-pandas">🐼 ${zoo.pandas} ${zoo.pandas === 1 ? 'panda' : zoo.pandas < 5 ? 'pandy' : 'pand'}</div>
+                <div class="popup-pandas">${pandaEmojis} ${zoo.pandas} ${zoo.pandas === 1 ? 'panda' : zoo.pandas < 5 ? 'pandy' : 'pand'}</div>
                 <div class="popup-location">📍 ${zoo.location}</div>
             `;
 
