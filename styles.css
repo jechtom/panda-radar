@@ -201,8 +201,20 @@ body {
     font-weight: 600;
 }
 
+.zoo-names {
+    color: #8e44ad;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-style: italic;
+}
+
 .zoo-distance {
     color: #27ae60;
+    font-size: 0.9rem;
+}
+
+.zoo-continent {
+    color: #3498db;
     font-size: 0.9rem;
 }
 

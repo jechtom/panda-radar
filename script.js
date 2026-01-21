@@ -12,6 +12,8 @@ class PandaRadar {
         await this.loadPandaData();
         this.initMap();
         this.bindEvents();
+        // Inicializace seznamu zoo i bez geolokace
+        this.updateZooList();
     }
 
     // Načtení dat o zoo s pandami z JSON souboru
@@ -253,40 +255,62 @@ class PandaRadar {
 
     showAllPandas() {
         // Vytvoření bounds pro všechny pandy
-        const group = new L.featureGroup(this.markers.map(m => m.marker));
-        this.map.fitBounds(group.getBounds().pad(0.1));
+        if (this.markers && this.markers.length > 0) {
+            const group = new L.featureGroup(this.markers.map(m => m.marker));
+            this.map.fitBounds(group.getBounds().pad(0.1));
+        } else {
+            // Fallback - zoom na globální pohled
+            this.map.setView([30, 0], 2);
+        }
     }
 
     updateZooList() {
         const zooListContainer = document.getElementById('zooList');
         
-        if (!this.userLocation) {
-            zooListContainer.innerHTML = `
-                <div class="loading">
-                    Klikněte na "📍 Najdi moji polohu" pro seřazení podle vzdálenosti! 🐾
-                </div>
-            `;
-            return;
+        let zooList = [...this.pandaZoos];
+        
+        // Seřazení podle vzdálenosti pokud máme polohu uživatele
+        if (this.userLocation) {
+            zooList = zooList.sort((a, b) => {
+                const distanceA = this.calculateDistance(this.userLocation.lat, this.userLocation.lng, a.lat, a.lng);
+                const distanceB = this.calculateDistance(this.userLocation.lat, this.userLocation.lng, b.lat, b.lng);
+                return distanceA - distanceB;
+            });
+        } else {
+            // Seřazení podle počtu pand (nejvíce první)
+            zooList = zooList.sort((a, b) => b.pandas - a.pandas);
         }
 
-        // Seřazení zoo podle vzdálenosti
-        const sortedZoos = [...this.pandaZoos].sort((a, b) => {
-            const distanceA = this.calculateDistance(this.userLocation.lat, this.userLocation.lng, a.lat, a.lng);
-            const distanceB = this.calculateDistance(this.userLocation.lat, this.userLocation.lng, b.lat, b.lng);
-            return distanceA - distanceB;
-        });
-
-        zooListContainer.innerHTML = sortedZoos.map(zoo => {
-            const distance = this.calculateDistance(this.userLocation.lat, this.userLocation.lng, zoo.lat, zoo.lng);
+        zooListContainer.innerHTML = zooList.map(zoo => {
+            const distance = this.userLocation ? 
+                this.calculateDistance(this.userLocation.lat, this.userLocation.lng, zoo.lat, zoo.lng) : null;
+            
+            const pandaNamesDisplay = zoo.pandaNames && zoo.pandaNames.length > 0 ?
+                `<div class="zoo-names">🏷️ ${zoo.pandaNames.join(', ')}</div>` : '';
+            
+            const distanceDisplay = distance ? 
+                `<div class="zoo-distance">🛣️ ${distance.toFixed(0)} km od vás</div>` :
+                `<div class="zoo-continent">🌍 ${zoo.continent || 'Svět'}</div>`;
+                
             return `
                 <div class="zoo-item" onclick="pandaRadar.focusOnZoo('${zoo.name}')">
                     <div class="zoo-name">🐼 ${zoo.name}</div>
                     <div class="zoo-location">📍 ${zoo.location}</div>
                     <div class="zoo-pandas">🐾 ${zoo.pandas} ${zoo.pandas === 1 ? 'panda' : zoo.pandas < 5 ? 'pandy' : 'pand'}</div>
-                    <div class="zoo-distance">🛣️ ${distance.toFixed(0)} km od vás</div>
+                    ${pandaNamesDisplay}
+                    ${distanceDisplay}
                 </div>
             `;
         }).join('');
+        
+        // Pokud nemáme geolokaci, zobraz tip
+        if (!this.userLocation) {
+            zooListContainer.innerHTML = `
+                <div class="loading">
+                    Klikněte na "📍 Najdi moji polohu" pro seřazení podle vzdálenosti! 🐾
+                </div>
+            ` + zooListContainer.innerHTML;
+        }
     }
 
     focusOnZoo(zooName) {
