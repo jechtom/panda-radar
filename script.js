@@ -77,49 +77,6 @@ class PandaRadar {
         
         // Žádná cesta nefungovala
         console.error('❌ Žádná cesta k pandas.json nefunguje!');
-        console.log('🔄 Používám fallback data...');
-        this.loadFallbackData();
-    }
-
-    // Fallback data pokud se JSON nepodaří načíst
-    loadFallbackData() {
-        console.log('🔄 Načítám fallback data...');
-        this.pandaZoos = [
-            {
-                name: "Zoo Berlin",
-                location: "Berlín, Německo",
-                lat: 52.5085,
-                lng: 13.3376,
-                pandas: 4,
-                details: "Jiao Qing, Meng Meng a jejich dvojčata! 🐼👨‍👩‍👧‍👦"
-            },
-            {
-                name: "ZooParc de Beauval",
-                location: "Saint-Aignan, Francie",
-                lat: 47.2667,
-                lng: 1.3667,
-                pandas: 5,
-                details: "Huan Huan, Yuan Zi a jejich mláďata! 🇫🇷🐼"
-            },
-            {
-                name: "Chengdu Research Base",
-                location: "Chengdu, Čína",
-                lat: 30.6736,
-                lng: 104.1034,
-                pandas: 200,
-                details: "Mekka všech milovníků pand! Více než 200 pand! 🏮"
-            }
-        ];
-        
-        console.log(`🐼 Fallback: ${this.pandaZoos.length} zoo načteno`);
-        
-        // Přidání markerů i pro fallback data
-        if (this.map) {
-            console.log('🗺️ Přidávám fallback markery na mapu...');
-            this.addPandaMarkers();
-        }
-        
-        this.updateStats();
     }
 
     // Aktualizace patičky s informacemi o datech
