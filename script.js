@@ -29,6 +29,11 @@ class PandaRadar {
             console.log(`🐼 Loaded ${data.metadata.totalZoos} zoos with ${data.metadata.totalPandas} pandas`);
             console.log(`📅 Last updated: ${data.metadata.lastUpdated}`);
             
+            // Přidání markerů na mapu až po načtení dat
+            if (this.map) {
+                this.addPandaMarkers();
+            }
+            
             this.updateStats();
         } catch (error) {
             console.error('❌ Chyba při načítání dat o pandách:', error);
@@ -65,6 +70,12 @@ class PandaRadar {
                 details: "Mekka všech milovníků pand! Více než 200 pand! 🏮"
             }
         ];
+        
+        // Přidání markerů i pro fallback data
+        if (this.map) {
+            this.addPandaMarkers();
+        }
+        
         this.updateStats();
     }
 
@@ -78,12 +89,27 @@ class PandaRadar {
             maxZoom: 18
         }).addTo(this.map);
 
-        // Přidání všech panda markerů
-        this.addPandaMarkers();
+        // Markery se přidají až po načtení dat v loadPandaData()
     }
 
     addPandaMarkers() {
-        this.pandaZoos.forEach(zoo => {
+        console.log(`🗺️ Přidávám ${this.pandaZoos.length} markerů na mapu`);
+        
+        // Vymazání stávajících markerů
+        this.markers.forEach(item => {
+            this.map.removeLayer(item.marker);
+        });
+        this.markers = [];
+        
+        this.pandaZoos.forEach((zoo, index) => {
+            console.log(`📍 Marker ${index + 1}: ${zoo.name} at [${zoo.lat}, ${zoo.lng}]`);
+            
+            // Ověření platnosti souřadnic
+            if (!zoo.lat || !zoo.lng || isNaN(zoo.lat) || isNaN(zoo.lng)) {
+                console.error(`❌ Neplatné souřadnice pro ${zoo.name}:`, zoo.lat, zoo.lng);
+                return;
+            }
+            
             // Vytvoření custom HTML markeru s panda emoji
             const pandaIcon = L.divIcon({
                 className: 'panda-marker',
@@ -112,6 +138,8 @@ class PandaRadar {
 
             this.markers.push({ marker, zoo });
         });
+        
+        console.log(`✅ Přidáno ${this.markers.length} markerů na mapu`);
     }
 
     showZooDetails(zoo) {
