@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐼 Panda Radar - Najdi nejbližší pandy!</title>
+    <title>🐼 Panda Radar - Find the Nearest Pandas!</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Interaktivní mapa zoologických zahrad s pandami po celém světě. Najděte nejbližší pandy ve vaší oblasti! 🐼🌍">
-    <meta name="keywords" content="pandy, zoo, mapa, zoologická zahrada, panda radar, pandy ve světě, interaktivní mapa">
+    <meta name="description" content="Interactive map of zoos with pandas around the world. Find the nearest pandas in your area! 🐼🌍">
+    <meta name="keywords" content="pandas, zoo, map, zoological garden, panda radar, pandas worldwide, interactive map">
     <meta name="author" content="Panda Radar">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourusername.github.io/panda-radar/">
-    <meta property="og:title" content="🐼 Panda Radar - Najdi nejbližší pandy!">
-    <meta property="og:description" content="Interaktivní mapa zoologických zahrad s pandami po celém světě. Najděte nejbližší pandy ve vaší oblasti!">
+    <meta property="og:title" content="🐼 Panda Radar - Find the Nearest Pandas!">
+    <meta property="og:description" content="Interactive map of zoos with pandas around the world. Find the nearest pandas in your area!">
     <meta property="og:image" content="https://yourusername.github.io/panda-radar/assets/screenshot.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://yourusername.github.io/panda-radar/">
-    <meta property="twitter:title" content="🐼 Panda Radar - Najdi nejbližší pandy!">
-    <meta property="twitter:description" content="Interaktivní mapa zoologických zahrad s pandami po celém světě. Najděte nejbližší pandy ve vaší oblasti!">
+    <meta property="twitter:title" content="🐼 Panda Radar - Find the Nearest Pandas!">
+    <meta property="twitter:description" content="Interactive map of zoos with pandas around the world. Find the nearest pandas in your area!">
     <meta property="twitter:image" content="https://yourusername.github.io/panda-radar/assets/screenshot.png">
     
     <!-- Favicon -->
@@ -46,20 +46,20 @@
             <h1 class="title">
                 🐼 Panda Radar
             </h1>
-            <p class="subtitle">Najdi nejbližší roztomilé pandy ve světě! 🌍</p>
+            <p class="subtitle">Find the nearest cute pandas in the world! 🌍</p>
         </div>
         <div class="stats">
             <div class="stat-item">
                 <span class="stat-number" id="totalZoos">0</span>
-                <span class="stat-label">Zoo s pandami</span>
+                <span class="stat-label">Panda Zoos</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number" id="totalPandas">0</span>
-                <span class="stat-label">Celkem pand</span>
+                <span class="stat-label">Total Pandas</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number" id="nearestDistance">-</span>
-                <span class="stat-label">Nejbližší (km)</span>
+                <span class="stat-label">Nearest (km)</span>
             </div>
         </div>
     </header>
@@ -69,21 +69,21 @@
             <div id="map" class="map"></div>
             <div class="controls">
                 <button id="findMe" class="btn btn-primary">
-                    📍 Najdi moji polohu
+                    📍 Find My Location
                 </button>
                 <button id="showAll" class="btn btn-secondary">
-                    🌍 Zobraz všechny pandy
+                    🌍 Show All Pandas
                 </button>
             </div>
         </div>
 
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>🐼 Nejbližší zoo s pandami</h2>
+                <h2>🐼 Nearest Panda Zoos</h2>
             </div>
             <div id="zooList" class="zoo-list">
                 <div class="loading">
-                    Hledám nejroztomilejší pandy... 🐾
+                    Searching for the cutest pandas... 🐾
                 </div>
             </div>
         </div>
@@ -96,16 +96,16 @@
                 <h2 id="modalTitle">🐼 Zoo Info</h2>
             </div>
             <div class="modal-body" id="modalBody">
-                <!-- Obsah bude dynamicky vložen -->
+                <!-- Content will be dynamically inserted -->
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>Vytvořeno s 💚 pro milovníky pand | <span id="dataInfo">Data jsou orientační</span></p>
+        <p>Created with 💚 for panda lovers | <span id="dataInfo">Data is indicative</span></p>
         <p>
             <a href="https://github.com/jechtom/panda-radar" target="_blank" rel="noopener">📂 GitHub Repository</a> | 
-            Našli jste chybu? Pošlete <a href="https://github.com/jechtom/panda-radar/pulls" target="_blank" rel="noopener">Pull Request</a> 🔧
+            Found a bug? Send a <a href="https://github.com/jechtom/panda-radar/pulls" target="_blank" rel="noopener">Pull Request</a> 🔧
         </p>
     </footer>
 

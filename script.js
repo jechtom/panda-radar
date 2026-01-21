@@ -9,18 +9,18 @@ class PandaRadar {
     }
 
     async init() {
-        console.log('🚀 Spouštím inicializaci Panda Radar...');
+        console.log('🚀 Starting Panda Radar initialization...');
         this.initMap();
         await this.loadPandaData();
         this.bindEvents();
         // Inicializace seznamu zoo i bez geolokace
         this.updateZooList();
-        console.log('✅ Inicializace dokončena');
+        console.log('✅ Initialization completed');
     }
 
     // Načtení dat o zoo s pandami z JSON souboru
     async loadPandaData() {
-        console.log('📁 Načítám data z pandas.json...');
+        console.log('📁 Loading data from pandas.json...');
         
         // Zkusím různé cesty k JSON souboru
         const possiblePaths = [
@@ -41,7 +41,7 @@ class PandaRadar {
                 }
                 
                 const data = await response.json();
-                console.log('📊 Načtená data:', data);
+                console.log('📊 Loaded data:', data);
                 
                 // Filtrace pouze aktivních zoo a přidání do pole
                 this.pandaZoos = data.zoos.filter(zoo => zoo.status === 'active');
@@ -60,10 +60,10 @@ class PandaRadar {
                 
                 // Přidání markerů na mapu až po načtení dat
                 if (this.map && this.pandaZoos.length > 0) {
-                    console.log('🗺️ Mapa je připravena, přidávám markery...');
+                    console.log('🗺️ Map is ready, adding markers...');
                     this.addPandaMarkers();
                 } else {
-                    console.error('❌ Mapa není inicializovaná nebo žádná data');
+                    console.error('❌ Map is not initialized or no data');
                 }
                 
                 this.updateStats();
@@ -148,7 +148,7 @@ class PandaRadar {
         // Test první marker po 2 sekundách
         if (this.markers.length > 0) {
             setTimeout(() => {
-                console.log('🧪 Test: Otevírám popup prvního markeru...');
+                console.log('🧪 Test: Opening popup of first marker...');
                 const firstMarker = this.markers[0];
                 this.map.setView([firstMarker.zoo.lat, firstMarker.zoo.lng], 8);
                 firstMarker.marker.openPopup();
@@ -290,11 +290,11 @@ class PandaRadar {
                     this.updateStats();
                 },
                 (error) => {
-                    alert('Nepodařilo se zjistit vaší polohu: ' + error.message);
+                    alert('Could not determine your location: ' + error.message);
                 }
             );
         } else {
-            alert('Váš prohlížeč nepodporuje geolokaci 😢');
+            alert('Your browser does not support geolocation 😢');
         }
     }
 
@@ -407,7 +407,7 @@ class PandaRadar {
 
 // Inicializace aplikace po načtení stránky
 document.addEventListener('DOMContentLoaded', async () => {
-    console.log('📄 DOM načten, spouštím aplikaci...');
+    console.log('📄 DOM loaded, starting application...');
     
     // Zobrazení loading stavu
     const zooList = document.getElementById('zooList');
@@ -423,18 +423,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Test markeru po 3 sekundách
     setTimeout(() => {
-        console.log('🧪 TEST: Kontrola markerů po 3 sekundách...');
+        console.log('🧪 TEST: Checking markers after 3 seconds...');
         if (window.pandaRadar.markers.length > 0) {
             console.log(`✅ Nalezeno ${window.pandaRadar.markers.length} markerů na mapě`);
         } else {
-            console.log('❌ Žádné markery nenalezeny!');
-            console.log('🔍 Zkouším přidat testovací marker...');
+            console.log('❌ No markers found!');
+            console.log('🔍 Trying to add test marker...');
             
             // Přidání testovacího markeru
             if (window.pandaRadar.map) {
                 const testMarker = L.marker([50.0833, 14.4167]).addTo(window.pandaRadar.map);
                 testMarker.bindPopup('🧪 Testovací marker - Praha');
-                console.log('✅ Testovací marker přidán');
+                console.log('✅ Test marker added');
             }
         }
     }, 3000);
