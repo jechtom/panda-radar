@@ -51,8 +51,6 @@ The application contains data about more than 15 zoos with pandas:
 ### 🌏 Asia  
 - **Chengdu Research Base** (China) - more than 200 pandas!
 - **Wolong Panda Reserve** (China) - largest reserve
-- **Ueno Zoo** (Japan) - Japanese panda favorites
-- **Adventure World** (Japan) - most successful breeding outside China
 - **Zoo Negara** (Malaysia) - pandas in the tropics
 
 ### 🌎 Other Continents
