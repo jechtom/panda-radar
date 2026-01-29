@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "2026-01-21",
+    "lastUpdated": "2026-01-29",
     "source": "Wikipedia - Giant pandas around the world",
     "note": "Data is indicative and may change. Some zoos have temporary contracts with China. Statistics are calculated automatically."
   },
@@ -193,12 +193,12 @@
       "continent": "Asia",
       "lat": 35.7156,
       "lng": 139.7719,
-      "pandas": 2,
-      "status": "active",
-      "details": "Ri Ri and Shin Shin - twins will return to China in January 2026! 🇯🇵😢",
-      "pandaNames": ["Ri Ri", "Shin Shin"],
+      "pandas": 0,
+      "status": "inactive",
+      "details": "All pandas returned to China in January 2026. Japan no longer has pandas. 🇯🇵😢",
+      "pandaNames": [],
       "established": 2011,
-      "contract": "loan from China"
+      "contract": "ended January 2026"
     },
     {
       "id": "zoo_negara",
@@ -307,6 +307,11 @@
     }
   ],
   "recentChanges": [
+    {
+      "zoo": "Ueno Zoo (Japan)",
+      "change": "All pandas returned to China - no more pandas in Japan",
+      "date": "2026-01"
+    },
     {
       "zoo": "Edinburgh Zoo",
       "change": "Pandas returned to China in December 2023",
